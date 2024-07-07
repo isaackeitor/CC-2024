@@ -19,7 +19,10 @@
 ")"                     { return ')'; }
 \n                      { return '\n'; }
 [ \t]                   ;  // skip whitespace
-.                       ;  // ignore all the rest
+.                       { 
+                            printf("Please verify the token and try again. Invalid token: %s\n", yytext); 
+                            return yytext[0]; 
+                        }
 
 %%
 

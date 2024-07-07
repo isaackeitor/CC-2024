@@ -798,14 +798,17 @@ YY_RULE_SETUP
 case 14:
 YY_RULE_SETUP
 #line 22 "/home/files/simple_language.l"
-;  // ignore all the rest
+{ 
+                            printf("Please verify the token and try again. Invalid token: %s\n", yytext); 
+                            return yytext[0]; 
+                        }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 24 "/home/files/simple_language.l"
+#line 27 "/home/files/simple_language.l"
 ECHO;
 	YY_BREAK
-#line 809 "lex.yy.c"
+#line 812 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1810,7 +1813,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 24 "/home/files/simple_language.l"
+#line 27 "/home/files/simple_language.l"
 
 
 int yywrap() {

@@ -6,19 +6,20 @@
 
 %%
 
-[a-zA-Z][a-zA-Z0-9]*    { yylval.str = new std::string(yytext);  return ID; }
+[a-zA-Z][a-zA-Z0-9]*    { yylval.str = new std::string(yytext); return ID; }
 [0-9]+                  { yylval.num = strtol(yytext, NULL, 10); return NUMBER; }
 "+"                     { return '+'; }
 "-"                     { return '-'; }
 "*"                     { return '*'; }
 "/"                     { return '/'; }
+"%"                     { return '%'; }
+"^"                     { return '^'; }
 "="                     { return '='; }
-":"                     { return ':'; }
 "("                     { return '('; }
 ")"                     { return ')'; }
-"\n"                    { return '\n';}
+\n                      { return '\n'; }
 [ \t]                   ;  // skip whitespace
-.                    ; /* ignore all the rest */
+.                       ;  // ignore all the rest
 
 %%
 

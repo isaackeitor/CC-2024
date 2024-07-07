@@ -18,3 +18,11 @@
   * Luego, ya pueden correr el compilador corriendo `./calc` y con ello ejecutar directivas/programas del lenguaje.
   * No les pongo ejemplos de los programas que pueden correr porque esa es la idea del lab, que experimenten y ustedes determinen qué expresiones si son válidas y cuales no y ya con ello completar los incisos del lab.
   * Cualquier duda, estamos a la orden.
+
+echo '#!/bin/sh' > buildLanguage.sh
+
+echo 'flex /home/files/simple_language.l' >> buildLanguage.sh
+echo 'yacc -dtv /home/files/simple_language.y' >> buildLanguage.sh
+echo 'g++ -c lex.yy.c' >> buildLanguage.sh
+echo 'g++ -c y.tab.c' >> buildLanguage.sh
+echo 'g++ -o calc y.tab.o lex.yy.o' >> buildLanguage.sh

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <cmath>  // Para la función pow
 static std::map<std::string, int> vars;
 inline void yyerror(const char *str) { std::cout << str << std::endl; }
 int yylex();
@@ -16,7 +17,8 @@ int yylex();
 
 %right '='
 %left '+' '-'
-%left '*' '/'
+%left '*' '/' '%'
+%right '^'
 
 %%
 
@@ -40,11 +42,13 @@ assignment: ID '=' expression
     ;
 
 expression: NUMBER                  { $$ = $1; }
-    | ID                            { $$ = vars[*$1];      delete $1; }
+    | ID                            { $$ = vars[*$1]; delete $1; }
     | expression '+' expression     { $$ = $1 + $3; }
     | expression '-' expression     { $$ = $1 - $3; }
     | expression '*' expression     { $$ = $1 * $3; }
     | expression '/' expression     { $$ = $1 / $3; }
+    | expression '%' expression     { $$ = $1 % $3; }
+    | expression '^' expression     { $$ = pow($1, $3); }
     | '(' expression ')'            { $$ = $2; }
     ;
 

@@ -23,12 +23,12 @@ int yylex();
 program: statement_list
         ;
 
-statement_list: statement
-    | statement_list statement
+statement_list: statement '\n'
+    | statement_list statement '\n'
     ;
 
 statement: assignment
-    | expression ':'          { std::cout << $1 << std::endl; }
+    | expression          { std::cout << $1 << std::endl; }
     ;
 
 assignment: ID '=' expression

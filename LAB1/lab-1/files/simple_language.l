@@ -14,8 +14,9 @@
 "/"                     { return '/'; }
 "="                     { return '='; }
 ":"                     { return ':'; }
+"\n"                    { return '\n';}
 [ \t]                   ;  // skip whitespace
-.|\n                    ; /* ignore all the rest */
+.                    ; /* ignore all the rest */
 
 %%
 

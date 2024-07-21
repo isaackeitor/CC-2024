@@ -10,18 +10,23 @@ else:
 
 def serializedATN():
     return [
-        4,1,10,41,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,1,0,4,0,10,8,0,11,0,12,
-        0,11,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,21,8,1,1,2,1,2,1,2,1,2,1,2,
-        1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,0,0,4,0,
-        2,4,6,0,0,39,0,9,1,0,0,0,2,20,1,0,0,0,4,22,1,0,0,0,6,31,1,0,0,0,
-        8,10,3,2,1,0,9,8,1,0,0,0,10,11,1,0,0,0,11,9,1,0,0,0,11,12,1,0,0,
-        0,12,1,1,0,0,0,13,14,3,4,2,0,14,15,5,9,0,0,15,21,1,0,0,0,16,17,3,
-        6,3,0,17,18,5,9,0,0,18,21,1,0,0,0,19,21,5,9,0,0,20,13,1,0,0,0,20,
-        16,1,0,0,0,20,19,1,0,0,0,21,3,1,0,0,0,22,23,5,1,0,0,23,24,5,8,0,
-        0,24,25,5,2,0,0,25,26,5,6,0,0,26,27,5,3,0,0,27,28,5,7,0,0,28,29,
-        5,4,0,0,29,30,5,7,0,0,30,5,1,0,0,0,31,32,5,5,0,0,32,33,5,8,0,0,33,
-        34,5,2,0,0,34,35,5,6,0,0,35,36,5,3,0,0,36,37,5,7,0,0,37,38,5,4,0,
-        0,38,39,5,7,0,0,39,7,1,0,0,0,2,11,20
+        4,1,14,58,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,1,0,4,
+        0,14,8,0,11,0,12,0,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,
+        1,28,8,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,3,2,41,8,2,
+        1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,4,1,4,1,5,1,5,1,5,
+        0,0,6,0,2,4,6,8,10,0,0,56,0,13,1,0,0,0,2,27,1,0,0,0,4,29,1,0,0,0,
+        6,42,1,0,0,0,8,53,1,0,0,0,10,55,1,0,0,0,12,14,3,2,1,0,13,12,1,0,
+        0,0,14,15,1,0,0,0,15,13,1,0,0,0,15,16,1,0,0,0,16,1,1,0,0,0,17,18,
+        3,4,2,0,18,19,5,13,0,0,19,28,1,0,0,0,20,21,3,6,3,0,21,22,5,13,0,
+        0,22,28,1,0,0,0,23,24,3,8,4,0,24,25,5,13,0,0,25,28,1,0,0,0,26,28,
+        5,13,0,0,27,17,1,0,0,0,27,20,1,0,0,0,27,23,1,0,0,0,27,26,1,0,0,0,
+        28,3,1,0,0,0,29,30,5,1,0,0,30,31,5,12,0,0,31,32,5,2,0,0,32,33,5,
+        10,0,0,33,34,5,3,0,0,34,35,5,11,0,0,35,36,5,4,0,0,36,37,5,11,0,0,
+        37,38,5,5,0,0,38,40,5,9,0,0,39,41,3,10,5,0,40,39,1,0,0,0,40,41,1,
+        0,0,0,41,5,1,0,0,0,42,43,5,6,0,0,43,44,5,12,0,0,44,45,5,2,0,0,45,
+        46,5,10,0,0,46,47,5,3,0,0,47,48,5,11,0,0,48,49,5,4,0,0,49,50,5,11,
+        0,0,50,51,5,5,0,0,51,52,5,9,0,0,52,7,1,0,0,0,53,54,5,7,0,0,54,9,
+        1,0,0,0,55,56,5,8,0,0,56,11,1,0,0,0,3,15,27,40
     ]
 
 class ConfRoomSchedulerParser ( Parser ):
@@ -35,18 +40,21 @@ class ConfRoomSchedulerParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ "<INVALID>", "'RESERVAR'", "'PARA'", "'DE'", "'A'", 
-                     "'CANCELAR'" ]
+                     "'POR'", "'CANCELAR'", "'LISTAR RESERVACIONES'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "DATE", "TIME", "ID", "NEWLINE", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "STRING", "NAME", "DATE", "TIME", "ID", "NEWLINE", 
                       "WS" ]
 
     RULE_prog = 0
     RULE_stat = 1
     RULE_reserve = 2
     RULE_cancel = 3
+    RULE_toList = 4
+    RULE_description = 5
 
-    ruleNames =  [ "prog", "stat", "reserve", "cancel" ]
+    ruleNames =  [ "prog", "stat", "reserve", "cancel", "toList", "description" ]
 
     EOF = Token.EOF
     T__0=1
@@ -54,11 +62,15 @@ class ConfRoomSchedulerParser ( Parser ):
     T__2=3
     T__3=4
     T__4=5
-    DATE=6
-    TIME=7
-    ID=8
-    NEWLINE=9
-    WS=10
+    T__5=6
+    T__6=7
+    STRING=8
+    NAME=9
+    DATE=10
+    TIME=11
+    ID=12
+    NEWLINE=13
+    WS=14
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -104,16 +116,16 @@ class ConfRoomSchedulerParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 9 
+            self.state = 13 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 8
+                self.state = 12
                 self.stat()
-                self.state = 11 
+                self.state = 15 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 546) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 8386) != 0)):
                     break
 
         except RecognitionException as re:
@@ -202,35 +214,64 @@ class ConfRoomSchedulerParser ( Parser ):
                 listener.exitCancelStat(self)
 
 
+    class ToListStatContext(StatContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a ConfRoomSchedulerParser.StatContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def toList(self):
+            return self.getTypedRuleContext(ConfRoomSchedulerParser.ToListContext,0)
+
+        def NEWLINE(self):
+            return self.getToken(ConfRoomSchedulerParser.NEWLINE, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterToListStat" ):
+                listener.enterToListStat(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitToListStat" ):
+                listener.exitToListStat(self)
+
+
 
     def stat(self):
 
         localctx = ConfRoomSchedulerParser.StatContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_stat)
         try:
-            self.state = 20
+            self.state = 27
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [1]:
                 localctx = ConfRoomSchedulerParser.ReserveStatContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 13
+                self.state = 17
                 self.reserve()
-                self.state = 14
+                self.state = 18
                 self.match(ConfRoomSchedulerParser.NEWLINE)
                 pass
-            elif token in [5]:
+            elif token in [6]:
                 localctx = ConfRoomSchedulerParser.CancelStatContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 16
+                self.state = 20
                 self.cancel()
-                self.state = 17
+                self.state = 21
                 self.match(ConfRoomSchedulerParser.NEWLINE)
                 pass
-            elif token in [9]:
-                localctx = ConfRoomSchedulerParser.BlankContext(self, localctx)
+            elif token in [7]:
+                localctx = ConfRoomSchedulerParser.ToListStatContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
-                self.state = 19
+                self.state = 23
+                self.toList()
+                self.state = 24
+                self.match(ConfRoomSchedulerParser.NEWLINE)
+                pass
+            elif token in [13]:
+                localctx = ConfRoomSchedulerParser.BlankContext(self, localctx)
+                self.enterOuterAlt(localctx, 4)
+                self.state = 26
                 self.match(ConfRoomSchedulerParser.NEWLINE)
                 pass
             else:
@@ -264,6 +305,13 @@ class ConfRoomSchedulerParser ( Parser ):
             else:
                 return self.getToken(ConfRoomSchedulerParser.TIME, i)
 
+        def NAME(self):
+            return self.getToken(ConfRoomSchedulerParser.NAME, 0)
+
+        def description(self):
+            return self.getTypedRuleContext(ConfRoomSchedulerParser.DescriptionContext,0)
+
+
         def getRuleIndex(self):
             return ConfRoomSchedulerParser.RULE_reserve
 
@@ -282,24 +330,37 @@ class ConfRoomSchedulerParser ( Parser ):
 
         localctx = ConfRoomSchedulerParser.ReserveContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_reserve)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 22
-            self.match(ConfRoomSchedulerParser.T__0)
-            self.state = 23
-            self.match(ConfRoomSchedulerParser.ID)
-            self.state = 24
-            self.match(ConfRoomSchedulerParser.T__1)
-            self.state = 25
-            self.match(ConfRoomSchedulerParser.DATE)
-            self.state = 26
-            self.match(ConfRoomSchedulerParser.T__2)
-            self.state = 27
-            self.match(ConfRoomSchedulerParser.TIME)
-            self.state = 28
-            self.match(ConfRoomSchedulerParser.T__3)
             self.state = 29
+            self.match(ConfRoomSchedulerParser.T__0)
+            self.state = 30
+            self.match(ConfRoomSchedulerParser.ID)
+            self.state = 31
+            self.match(ConfRoomSchedulerParser.T__1)
+            self.state = 32
+            self.match(ConfRoomSchedulerParser.DATE)
+            self.state = 33
+            self.match(ConfRoomSchedulerParser.T__2)
+            self.state = 34
             self.match(ConfRoomSchedulerParser.TIME)
+            self.state = 35
+            self.match(ConfRoomSchedulerParser.T__3)
+            self.state = 36
+            self.match(ConfRoomSchedulerParser.TIME)
+            self.state = 37
+            self.match(ConfRoomSchedulerParser.T__4)
+            self.state = 38
+            self.match(ConfRoomSchedulerParser.NAME)
+            self.state = 40
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==8:
+                self.state = 39
+                self.description()
+
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -328,6 +389,9 @@ class ConfRoomSchedulerParser ( Parser ):
             else:
                 return self.getToken(ConfRoomSchedulerParser.TIME, i)
 
+        def NAME(self):
+            return self.getToken(ConfRoomSchedulerParser.NAME, 0)
+
         def getRuleIndex(self):
             return ConfRoomSchedulerParser.RULE_cancel
 
@@ -348,22 +412,106 @@ class ConfRoomSchedulerParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_cancel)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 31
-            self.match(ConfRoomSchedulerParser.T__4)
-            self.state = 32
+            self.state = 42
+            self.match(ConfRoomSchedulerParser.T__5)
+            self.state = 43
             self.match(ConfRoomSchedulerParser.ID)
-            self.state = 33
+            self.state = 44
             self.match(ConfRoomSchedulerParser.T__1)
-            self.state = 34
+            self.state = 45
             self.match(ConfRoomSchedulerParser.DATE)
-            self.state = 35
+            self.state = 46
             self.match(ConfRoomSchedulerParser.T__2)
-            self.state = 36
+            self.state = 47
             self.match(ConfRoomSchedulerParser.TIME)
-            self.state = 37
+            self.state = 48
             self.match(ConfRoomSchedulerParser.T__3)
-            self.state = 38
+            self.state = 49
             self.match(ConfRoomSchedulerParser.TIME)
+            self.state = 50
+            self.match(ConfRoomSchedulerParser.T__4)
+            self.state = 51
+            self.match(ConfRoomSchedulerParser.NAME)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class ToListContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return ConfRoomSchedulerParser.RULE_toList
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterToList" ):
+                listener.enterToList(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitToList" ):
+                listener.exitToList(self)
+
+
+
+
+    def toList(self):
+
+        localctx = ConfRoomSchedulerParser.ToListContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 8, self.RULE_toList)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 53
+            self.match(ConfRoomSchedulerParser.T__6)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class DescriptionContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def STRING(self):
+            return self.getToken(ConfRoomSchedulerParser.STRING, 0)
+
+        def getRuleIndex(self):
+            return ConfRoomSchedulerParser.RULE_description
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDescription" ):
+                listener.enterDescription(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDescription" ):
+                listener.exitDescription(self)
+
+
+
+
+    def description(self):
+
+        localctx = ConfRoomSchedulerParser.DescriptionContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 10, self.RULE_description)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 55
+            self.match(ConfRoomSchedulerParser.STRING)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

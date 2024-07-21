@@ -17,7 +17,7 @@ Utilicen nuevamente el container del lab anterior o su propia implementación. N
 * Luego que corran el comando de Docker, deberán de generar los archivos de Lexer y Parser de ANTLR con el siguiente comando:
 
   ```
-  antlr -Dlanguage=Python3 ConfRoomScheduler.g4
+  antlr -Dlanguage=Python3 -o gen ConfRoomScheduler.g4
   ```
 * Luego, usan el Driver para analizar el archivo de prueba:
 
